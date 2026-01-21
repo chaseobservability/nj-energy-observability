@@ -22,7 +22,7 @@ This site reflects the latest published artifacts as of 2026-02-02.
 This project is fully open source.
 
 - **GitHub Repository:**  
-  https://github.com/chaseobservability/nj-energy-observability
+  [https://github.com/chaseobservability/nj-energy-observability](https://github.com/chaseobservability/nj-energy-observability)
 
 Issues and pull requests are welcome, subject to the project's public-data
 and non-prescriptive guardrails.

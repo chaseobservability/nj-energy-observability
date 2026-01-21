@@ -2,7 +2,7 @@
 
 Thanks for your interest in improving this project. Please follow these guidelines to keep contributions consistent.
 
-Repository: https://github.com/chaseobservability/nj-energy-observability
+Repository: [https://github.com/chaseobservability/nj-energy-observability](https://github.com/chaseobservability/nj-energy-observability)
 
 ## Commit messages
 

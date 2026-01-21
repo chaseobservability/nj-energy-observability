@@ -53,7 +53,7 @@ They are observability artifacts, not decision documents.
 
 | Week Ending | Status | Link |
 |------------|--------|------|
-| 2026-02-02 | Example (placeholder) | https://github.com/chaseobservability/nj-energy-observability/blob/main/reports/weekly/2026-02-02.md |
+| 2026-02-02 | Example (placeholder) | [https://github.com/chaseobservability/nj-energy-observability/blob/main/reports/weekly/2026-02-02.md](https://github.com/chaseobservability/nj-energy-observability/blob/main/reports/weekly/2026-02-02.md) |
 | -- | Live briefs | *(To be published once API access is active)* |
 
 ---
@@ -71,10 +71,10 @@ Corrections, if required, are documented explicitly.
 
 ## Relationship to Other Artifacts
 
-- Metric definitions: https://github.com/chaseobservability/nj-energy-observability/blob/main/metrics/metric-catalog.yml
-- Baseline registry: https://github.com/chaseobservability/nj-energy-observability/blob/main/baseline/data-snapshots.yml
-- EO trackers: https://github.com/chaseobservability/nj-energy-observability/blob/main/eo/EO1
-- Source code: https://github.com/chaseobservability/nj-energy-observability
+- Metric definitions: [https://github.com/chaseobservability/nj-energy-observability/blob/main/metrics/metric-catalog.yml](https://github.com/chaseobservability/nj-energy-observability/blob/main/metrics/metric-catalog.yml)
+- Baseline registry: [https://github.com/chaseobservability/nj-energy-observability/blob/main/baseline/data-snapshots.yml](https://github.com/chaseobservability/nj-energy-observability/blob/main/baseline/data-snapshots.yml)
+- EO trackers: [https://github.com/chaseobservability/nj-energy-observability/blob/main/eo/EO1](https://github.com/chaseobservability/nj-energy-observability/blob/main/eo/EO1)
+- Source code: [https://github.com/chaseobservability/nj-energy-observability](https://github.com/chaseobservability/nj-energy-observability)
 
 ---
 

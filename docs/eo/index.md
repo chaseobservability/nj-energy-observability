@@ -34,7 +34,7 @@ It only tracks what can be verified publicly.
 ## Active Trackers
 
 ### EO1 -- Executive Order No. 1
-- Official EO PDF: https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf
+- Official EO PDF: [https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf](https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf)
 - Human-readable tracker: `/eo/EO1/`
 - Generated milestones table: `/eo/EO1.md`
 
