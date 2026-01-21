@@ -1,5 +1,6 @@
 title: NJ Energy Observability
 theme: minima
+url: https://njenergyobservability.org
 
 header_pages:
   - index.md

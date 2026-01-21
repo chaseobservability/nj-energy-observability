@@ -10,7 +10,7 @@ WEEK_ENDING ?= 2026-01-07
 EO ?= EO1
 
 .PHONY: venv install pull compute render weekly render_eo run clean
-.PHONY: render_all_eos
+.PHONY: render_all_eos render_assets
 
 venv:
 	python3 -m venv .venv
@@ -43,6 +43,9 @@ new_eo:
 
 render_all_eos:
 	@bash scripts/render_all_eos.sh
+
+render_assets:
+	@bash scripts/render_assets.sh
 
 run: pull compute render
 	@echo "Done. Outputs in out/$(PERIOD)/"
