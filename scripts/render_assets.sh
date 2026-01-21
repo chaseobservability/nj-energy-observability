@@ -23,9 +23,10 @@ mkdir -p "$OUT_OG_DIR" "$OUT_ICON_DIR" "$TMP_DIR"
 # Render a large transparent PNG (keeps edges crisp)
 inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-1024.png" --export-width=1024 --export-area-drawing
 
-# Compose onto OG canvas (white background), centered
+# Compose onto OG canvas (white background), scaled to fit
 magick -size 1200x630 canvas:white \
-  "$TMP_DIR/nj-outline-1024.png" -gravity center -composite \
+  "$TMP_DIR/nj-outline-1024.png" -resize 1100x580 \
+  -gravity center -composite \
   "$OUT_OG_DIR/og-image.png"
 
 echo "Wrote $OUT_OG_DIR/og-image.png (1200x630)"
@@ -34,17 +35,18 @@ echo "Wrote $OUT_OG_DIR/og-image.png (1200x630)"
 inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-256.png" --export-width=256 --export-area-drawing
 
 magick -size 180x180 canvas:white \
-  "$TMP_DIR/nj-outline-256.png" -gravity center -composite \
+  "$TMP_DIR/nj-outline-256.png" -resize 140x140 \
+  -gravity center -composite \
   "$OUT_ICON_DIR/apple-touch-icon.png"
 
 echo "Wrote $OUT_ICON_DIR/apple-touch-icon.png (180x180)"
 
 # --- 3) Generate favicons (PNG 16/32) ---
-magick "$TMP_DIR/nj-outline-256.png" -background white -gravity center -extent 256x256 \
-  -resize 32x32 "$OUT_ICON_DIR/favicon-32x32.png"
+magick "$TMP_DIR/nj-outline-256.png" -resize 32x32 -gravity center -background white \
+  -extent 32x32 "$OUT_ICON_DIR/favicon-32x32.png"
 
-magick "$TMP_DIR/nj-outline-256.png" -background white -gravity center -extent 256x256 \
-  -resize 16x16 "$OUT_ICON_DIR/favicon-16x16.png"
+magick "$TMP_DIR/nj-outline-256.png" -resize 16x16 -gravity center -background white \
+  -extent 16x16 "$OUT_ICON_DIR/favicon-16x16.png"
 
 echo "Wrote $OUT_ICON_DIR/favicon-32x32.png and favicon-16x16.png"
 
