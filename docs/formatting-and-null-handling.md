@@ -1,13 +1,16 @@
-# Formatting + Null Handling Spec
+# Formatting & Null Handling
+
+This document supports implementation and reproducibility. It is not required
+reading for understanding project outputs.
 
 ## pct(x)
 - Input: float in [0,1] or null
 - Output: percentage string with <= 1 decimal, drop trailing .0
-- Null -> "—"
+- Null -> "--"
 
 ## Null handling
 - Never silently impute.
-- Any null renders as "—".
+- Any null renders as "--".
 - Confidence downgrades when key inputs missing.
 
 ## Rounding

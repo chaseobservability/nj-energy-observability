@@ -1,0 +1,23 @@
+# CODEOWNERS -- NJ Energy Observability
+# Ensures key governance + docs changes request maintainer review.
+
+* @chaseobservability
+
+# Governance / definitions
+/metrics/ @chaseobservability
+/governance/ @chaseobservability
+/baseline/ @chaseobservability
+
+# Executive Order trackers + generated EO docs
+/eo/ @chaseobservability
+/docs/eo/ @chaseobservability
+
+# GitHub Pages content
+/docs/ @chaseobservability
+
+# CI / workflows
+/.github/workflows/ @chaseobservability
+
+# Scripts that generate artifacts
+/scripts/ @chaseobservability
+/src/render/ @chaseobservability

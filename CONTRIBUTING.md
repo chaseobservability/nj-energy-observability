@@ -2,6 +2,8 @@
 
 Thanks for your interest in improving this project. Please follow these guidelines to keep contributions consistent.
 
+Repository: https://github.com/chaseobservability/nj-energy-observability
+
 ## Commit messages
 
 Use Conventional Commits format:
@@ -25,6 +27,16 @@ Examples:
 - feat: add statewide rollup output
 - docs: document data sources
 - fix(parser): handle empty zone list
+
+## PR Checklist (Required)
+
+Before requesting review, confirm:
+
+- [ ] No `raw/`, `stage/`, `.env*`, API keys, or parquet files are committed
+- [ ] If EO YAML changed, run `make render_all_eos` and commit updated `docs/eo/*.md`
+- [ ] If docs changed, confirm GitHub Pages build is expected to pass
+- [ ] If metrics changed, update `metrics/metric-catalog.yml` (taxonomy + allowed/disallowed claims)
+- [ ] No forecasts, recommendations, or nonpublic content added
 
 ## Versioning, tags, and releases
 

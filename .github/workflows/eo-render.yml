@@ -1,0 +1,41 @@
+name: Render EO docs
+
+on:
+  pull_request:
+    paths:
+      - "eo/**"
+      - "docs/eo/**"
+      - "src/render/render_eo_table.py"
+      - "scripts/render_all_eos.sh"
+      - "Makefile"
+      - "requirements.txt"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Render all EO docs
+        run: |
+          bash scripts/render_all_eos.sh
+
+      - name: Ensure generated docs are committed
+        run: |
+          git status --porcelain
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Generated files changed. Please run 'make render_all_eos' and commit the updated docs/eo/*.md."
+            git diff
+            exit 1
+          fi

@@ -1,2 +1,17 @@
-theme: minima
 title: NJ Energy Observability
+theme: minima
+
+header_pages:
+  - index.md
+  - architecture.md
+  - weekly/index.md
+  - eo/index.md
+  - eo/EO1.md
+  - metrics/README.md
+  - formatting-and-null-handling.md
+  - contributing.md
+
+minima:
+  social_links:
+    - platform: github
+      user_url: https://github.com/chaseobservability/nj-energy-observability

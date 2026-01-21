@@ -1,8 +1,8 @@
 # NJ Energy Observability
 
-**Independent, public-data-based observability of New Jersey’s electricity system.**
+**Independent, public-data-based observability of New Jersey's electricity system.**
 
-NJ Energy Observability is an open-source project that makes New Jersey’s electricity system more observable using
+NJ Energy Observability is an open-source project that makes New Jersey's electricity system more observable using
 **publicly available data** and **reproducible methods**.
 
 This project is **not** an official product of:
@@ -10,6 +10,22 @@ This project is **not** an official product of:
 - the New Jersey Board of Public Utilities,
 - PJM Interconnection,
 - or any electric utility or market participant.
+
+---
+
+This site reflects the latest published artifacts as of 2026-02-02.
+
+---
+
+## Source Code
+
+This project is fully open source.
+
+- **GitHub Repository:**  
+  https://github.com/chaseobservability/nj-energy-observability
+
+Issues and pull requests are welcome, subject to the project's public-data
+and non-prescriptive guardrails.
 
 ---
 
@@ -48,7 +64,7 @@ Interpretation and use of the outputs are the responsibility of the reader.
   Locked historical reference sets to prevent baseline drift and post-hoc reinterpretation.
 
 - **Weekly Briefs**  
-  PR-based, reviewable synthesis artifacts that turn public signals into structured questions—not conclusions.
+  PR-based, reviewable synthesis artifacts that turn public signals into structured questions -- not conclusions.
 
 - **EO1 Tracker**  
   A public-artifact-first tracker for Executive Order No. 1 implementation milestones.
@@ -73,6 +89,6 @@ The goal is **trust through inspectability**, not authority.
 Issues and pull requests are welcome via GitHub. The maintainer reserves the right to decline contributions that:
 - introduce nonpublic data,
 - embed forecasts or recommendations,
-- or violate the project’s observability guardrails.
+- or violate the project's observability guardrails.
 
 See `CONTRIBUTING.md` and `governance/not-in-scope.md`.

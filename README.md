@@ -1,9 +1,27 @@
-# NJ Capacity Exposure Scorecard (Zone-first + Statewide)
+# NJ Energy Observability
 
-Public-data-based quarterly scorecard for NJ PJM zones:
+[![Render EO docs](https://github.com/chaseobservability/nj-energy-observability/actions/workflows/eo-render.yml/badge.svg?branch=main)](https://github.com/chaseobservability/nj-energy-observability/actions/workflows/eo-render.yml) [![Build docs (GitHub Pages)](https://github.com/chaseobservability/nj-energy-observability/actions/workflows/docs-build.yml/badge.svg?branch=main)](https://github.com/chaseobservability/nj-energy-observability/actions/workflows/docs-build.yml) [![Guardrails (no private data)](https://github.com/chaseobservability/nj-energy-observability/actions/workflows/guardrails.yml/badge.svg?branch=main)](https://github.com/chaseobservability/nj-energy-observability/actions/workflows/guardrails.yml)
+
+**Public-data-only. Descriptive, not prescriptive. Not an official NJBPU/PJM product.**
+
+Public-data-based observability for NJ PJM zones:
 `AECO`, `JCPL`, `PSEG`, `RECO` plus an `NJ_STATEWIDE` rollup.
 
 This produces an **exposure + risk-hours diagnostic**, not an auction forecast and not a policy recommendation.
+
+Additional public artifacts include:
+- Weekly briefs (reviewable, PR-based cadence)
+- Executive Order tracking (public-artifact-first)
+- Metric governance and baseline registry
+
+## Project Status
+- **Current release:** v0.1.0 (structure-only)
+- **Live data ingestion:** not yet enabled
+- **Primary artifacts:** scorecards, weekly briefs, EO trackers
+- **Roadmap:** see `ROADMAP.md`
+
+This project will publish live, public-data-based artifacts once
+API access is active and traceability checks are complete.
 
 ## Outputs
 For a given quarter (PERIOD):

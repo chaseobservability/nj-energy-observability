@@ -1,7 +1,7 @@
-# NJ Energy Observability — Release Notes
+# NJ Energy Observability -- Release Notes
 
 ## Version
-**v0.1.0 — Structure-Only Release**
+**v0.1.0 -- Structure-Only Release**
 
 ## Date
 2026-01-20
@@ -14,7 +14,7 @@ It provides schemas, templates, governance rules, and tracking artifacts that de
 ## Versioning
 This project follows Semantic Versioning (SemVer). While pre-1.0, version increments may include breaking changes to structure and naming.
 
-## What’s included
+## What's included
 - Core code for data pulls and scorecard generation in `src/`, with utility helpers and one-pager rendering
 - Config scaffolding for capacity pricing, customers, pnodes, and zones in `config/`
 - Templates for scorecards and public one-pagers in `templates/`
@@ -27,7 +27,7 @@ This project follows Semantic Versioning (SemVer). While pre-1.0, version increm
 - Documentation set for GitHub Pages in `docs/` (architecture, format/nulls, index)
 - Open-source hygiene files: LICENSE, code of conduct, disclaimer, and contributing guide
 
-## What’s explicitly out of scope
+## What's explicitly out of scope
 - Nonpublic or confidential data
 - Market forecasts or nowcasts
 - Policy recommendations

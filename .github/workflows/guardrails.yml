@@ -1,0 +1,21 @@
+name: Guardrails (no private data)
+
+on:
+  pull_request:
+
+jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail if forbidden paths are committed
+        run: |
+          forbidden_regex='(^|/)(raw|stage)/|(^|/)\\.env($|\\.|/)|\\.parquet$|(^|/)out/[^/]+/.*\\.(parquet|jsonl)$'
+          if git ls-files | grep -E "$forbidden_regex" > /dev/null; then
+            echo "Forbidden files detected in repo history for this PR."
+            echo "Do not commit raw/, stage/, .env, or parquet files."
+            git ls-files | grep -E "$forbidden_regex" || true
+            exit 1
+          fi
