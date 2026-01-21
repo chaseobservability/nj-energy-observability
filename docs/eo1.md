@@ -1,4 +1,6 @@
-# Executive Order No. 1 Tracker
+---
+title: Executive Order No. 1 Tracker
+---
 
 This tracker is public-artifact-first. Status is based only on published
 documents and verifiable references.

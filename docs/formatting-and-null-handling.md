@@ -1,4 +1,6 @@
-# Formatting and Null Handling
+---
+title: Formatting and Null Handling
+---
 
 This document supports implementation and reproducibility. It is not required
 reading for understanding project outputs.

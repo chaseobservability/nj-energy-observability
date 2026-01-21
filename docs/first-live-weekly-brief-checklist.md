@@ -1,4 +1,6 @@
-# First Live Weekly Brief -- Readiness Checklist (v0.1.1)
+---
+title: First Live Weekly Brief -- Readiness Checklist (v0.1.1)
+---
 
 This checklist should be completed **before** publishing the first live
 Weekly Brief based on real public data.

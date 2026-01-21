@@ -1,4 +1,6 @@
-# Weekly Brief Renderer
+---
+title: Weekly Brief Renderer
+---
 
 **Project:** NJ Energy Observability  
 **Status:** Spec (v0.1.1 target)  

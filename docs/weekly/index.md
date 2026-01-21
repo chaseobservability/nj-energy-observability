@@ -1,4 +1,6 @@
-# Weekly Briefs
+---
+title: Weekly Briefs
+---
 
 Weekly Briefs are the primary **cadence artifact** of NJ Energy Observability.
 

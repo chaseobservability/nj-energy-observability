@@ -1,4 +1,6 @@
-# Architecture Overview
+---
+title: Architecture Overview
+---
 
 NJ Energy Observability is designed as a **layered observability system**.
 Each layer has a distinct purpose and a strict boundary.
@@ -27,7 +29,7 @@ Synthesis & Cadence
 
 ---
 
-## Layer 1 — Public Data Sources
+## Layer 1 -- Public Data Sources
 
 **Purpose:** Define the authoritative sources of truth.
 
@@ -43,11 +45,11 @@ Examples:
 - No enrichment with nonpublic data
 
 This layer answers:  
-**“Where does the data come from?”**
+**\"Where does the data come from?\"**
 
 ---
 
-## Layer 2 — Ingestion & Traceability
+## Layer 2 -- Ingestion & Traceability
 
 **Purpose:** Preserve provenance and prevent silent data loss.
 
@@ -63,11 +65,11 @@ Artifacts:
   - code and definition versions
 
 This layer answers:  
-**“What exactly was pulled, and when?”**
+**\"What exactly was pulled, and when?\"**
 
 ---
 
-## Layer 3 — Scorecard Kernel
+## Layer 3 -- Scorecard Kernel
 
 **Purpose:** Produce stable, reproducible descriptive outputs.
 
@@ -84,11 +86,11 @@ Characteristics:
 - Non-prescriptive
 
 This layer answers:  
-**“What happened, in a structured way?”**
+**\"What happened, in a structured way?\"**
 
 ---
 
-## Layer 4 — Governance & Meaning
+## Layer 4 -- Governance & Meaning
 
 **Purpose:** Constrain interpretation and prevent misuse.
 
@@ -96,14 +98,14 @@ Artifacts:
 - Metric catalog
 - Metric design rules
 - Baseline registry
-- Explicit “not in scope” doctrine
+- Explicit \"not in scope\" doctrine
 
 This layer answers:  
-**“How should these numbers be interpreted — and how should they not?”**
+**\"How should these numbers be interpreted -- and how should they not?\"**
 
 ---
 
-## Layer 5 — Synthesis & Cadence
+## Layer 5 -- Synthesis & Cadence
 
 **Purpose:** Maintain awareness without reactivity.
 
@@ -118,7 +120,7 @@ Characteristics:
 - Question-oriented (not decision-oriented)
 
 This layer answers:  
-**“What deserves attention next?”**
+**\"What deserves attention next?\"**
 
 ---
 

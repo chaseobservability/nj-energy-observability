@@ -103,7 +103,9 @@ def render_markdown(eo_code: str, milestones_doc: dict, artifacts_doc: dict) -> 
     table_rows = render_table_rows(milestones, artifacts)
 
     md: List[str] = []
-    md.append(f"# {title} -- Implementation Tracker")
+    md.append("---")
+    md.append(f"title: {title} -- Implementation Tracker")
+    md.append("---")
     md.append("")
     md.append(
         "This page presents a **human-readable view** of implementation milestones, "

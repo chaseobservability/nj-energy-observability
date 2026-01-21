@@ -1,4 +1,6 @@
-# Executive Order No. 1 -- Implementation Tracker
+---
+title: Executive Order No. 1 -- Implementation Tracker
+---
 
 This page presents a **human-readable view** of implementation milestones, derived entirely from **public artifacts** and maintained in version control.
 
@@ -10,9 +12,9 @@ This page presents a **human-readable view** of implementation milestones, deriv
 
 ## Official Source
 - Effective date: **2026-01-20**
-- Official PDF: [https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf](https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf)
+- Official PDF: https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf
 
-*This page was generated on 2026-01-20.*
+*This page was generated on 2026-01-21.*
 
 ---
 

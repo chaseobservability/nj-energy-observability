@@ -1,4 +1,6 @@
-# Executive Order Tracking
+---
+title: Executive Order Tracking
+---
 
 Executive Order Tracking is a public-artifact-first view of major New Jersey energy directives.
 

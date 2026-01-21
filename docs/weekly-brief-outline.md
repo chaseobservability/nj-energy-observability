@@ -1,4 +1,6 @@
-# Weekly NJ Energy Observability Brief
+---
+title: Weekly NJ Energy Observability Brief
+---
 
 Week Ending: YYYY-MM-DD  
 Release Type: Descriptive | Public Data | Non-Official

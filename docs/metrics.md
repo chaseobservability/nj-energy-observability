@@ -1,4 +1,6 @@
-# Metric Governance
+---
+title: Metric Governance
+---
 
 Metric definitions, taxonomies, and guardrails live in the metric catalog and
 governance rules.

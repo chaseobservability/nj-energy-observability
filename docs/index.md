@@ -1,4 +1,6 @@
-# NJ Energy Observability
+---
+title: NJ Energy Observability
+---
 
 **Independent, public-data-based observability of New Jersey's electricity system.**
 
