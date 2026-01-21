@@ -30,10 +30,10 @@
     button.textContent = "Theme: System";
 
     var target =
-      document.querySelector(".site-footer .wrapper") ||
-      document.querySelector(".site-footer") ||
       document.querySelector(".site-header .wrapper") ||
       document.querySelector(".site-header") ||
+      document.querySelector(".site-footer .wrapper") ||
+      document.querySelector(".site-footer") ||
       document.body;
 
     target.appendChild(button);
