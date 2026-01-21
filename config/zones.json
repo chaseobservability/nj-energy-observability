@@ -1,0 +1,6 @@
+{
+  "nj_zones": ["AECO", "JCPL", "PSEG", "RECO"],
+  "statewide_id": "NJ_STATEWIDE",
+  "rollup_method": "load_weighted",
+  "top_hours_n": 100
+}

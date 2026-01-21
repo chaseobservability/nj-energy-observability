@@ -1,0 +1,14 @@
+# Baseline Data Snapshots Registry
+# Public-only references to historical distributions used for scorecarded metrics.
+# This file does NOT contain raw data — only references and hashes.
+
+meta:
+  registry_version: "v1.0"
+  scope: "nj-energy-observability"
+  purpose: "Define and lock baseline reference sets for scorecarded metrics."
+  guardrails:
+    - "Baselines are defined per cycle and may not change mid-cycle."
+    - "If a baseline changes, historical comparisons must be restated."
+    - "Raw historical data remains outside Git."
+
+snapshots: []

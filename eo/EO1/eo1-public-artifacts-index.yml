@@ -1,0 +1,101 @@
+# EO1 Public Artifacts Index
+# NJ Energy Observability — Independent, public-data-based, not official.
+#
+# Purpose:
+# - Maintain a canonical, dated index of publicly posted EO1-related artifacts.
+# - Enable verification of EO1 milestone status without interpretation.
+#
+# Rules:
+# - Public URLs only.
+# - No internal documents.
+# - No summaries or interpretations.
+# - Retrieval dates must be recorded.
+
+meta:
+  eo_id: "EO1"
+  title: "Executive Order No. 1"
+  jurisdiction: "New Jersey"
+  source_url: "https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf"
+  index_version: "v1.0"
+  last_updated: "YYYY-MM-DD"
+  maintenance_policy:
+    - "Append entries; do not overwrite history."
+    - "If a document is superseded, mark status and retain the prior link."
+
+artifacts:
+  - id: "EO1-PDF"
+    milestone_id: null
+    title: "Executive Order No. 1 (PDF)"
+    owner_org: "State of New Jersey"
+    document_type: "Executive Order"
+    url: "https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf"
+    posted_date: "2026-01-20"
+    retrieved_date: "2026-01-20"
+    status: "published"
+    notes: null
+
+  - id: "RUBC-BPU-ORDER"
+    milestone_id: "EO1-1A-RUBC-PROVIDE"
+    title: "BPU Order Establishing Residential Universal Bill Credits"
+    owner_org: "NJBPU"
+    document_type: "Order / Notice"
+    url: null
+    posted_date: null
+    retrieved_date: null
+    status: "pending"
+    notes: null
+
+  - id: "RGGI-JOINT-STATEMENT"
+    milestone_id: "EO1-2-RGGI-CONFER-STATEMENT"
+    title: "Joint BPU/DEP/EDA Public Statement on RGGI Proceeds and Ratepayer Relief"
+    owner_orgs: ["NJBPU", "NJDEP", "NJEDA"]
+    document_type: "Public Statement / Addendum"
+    url: null
+    posted_date: null
+    retrieved_date: null
+    status: "pending"
+    notes: null
+
+  - id: "SBC-REVIEW-NOTICE"
+    milestone_id: "EO1-3-SBC-REVIEW"
+    title: "BPU Notice or Order Initiating SBC Review"
+    owner_org: "NJBPU"
+    document_type: "Order / Notice"
+    url: null
+    posted_date: null
+    retrieved_date: null
+    status: "pending"
+    notes: null
+
+  - id: "NJCEP-FY26-TRUEUP"
+    milestone_id: "EO1-4-NJCEP-TRUEUP"
+    title: "NJCEP FY26 True-Up Budget (Reconciled to FY25 Actuals)"
+    owner_orgs: ["NJBPU", "NJCEP"]
+    document_type: "Budget / Program Document"
+    url: null
+    posted_date: null
+    retrieved_date: null
+    status: "pending"
+    notes: null
+
+  - id: "EDU-MODERNIZATION-STUDY-KICKOFF"
+    milestone_id: "EO1-7-STUDY-DELIVERABLE"
+    title: "BPU Modernization Study Kickoff / Scope Document"
+    owner_org: "NJBPU"
+    document_type: "Order / Scope / Study Notice"
+    url: null
+    posted_date: null
+    retrieved_date: null
+    status: "pending"
+    notes: null
+
+  - id: "EDU-MODERNIZATION-STUDY-REPORT"
+    milestone_id: "EO1-7-STUDY-DELIVERABLE"
+    title: "Public Report on Utility Business Model Modernization"
+    owner_org: "NJBPU"
+    document_type: "Report"
+    url: null
+    posted_date: null
+    retrieved_date: null
+    status: "pending"
+    notes: null

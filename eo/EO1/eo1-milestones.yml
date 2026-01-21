@@ -1,0 +1,178 @@
+# EO1 Milestones Tracker (Public-Artifact-First)
+# NJ Energy Observability — Independent, public-data-based, not official.
+#
+# Source: Executive Order No. 1 (Governor Mikie Sherrill), effective immediately on Jan 20, 2026.
+# https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf
+#
+# Purpose:
+# - Track EO1 implementation as observable, verifiable public artifacts.
+# - No internal deliberations, no confidential data, no forecasts, no recommendations.
+
+meta:
+  eo_id: "EO1"
+  title: "Executive Order No. 1"
+  jurisdiction: "New Jersey"
+  effective_date: "2026-01-20"
+  tracking_version: "v1.1"
+  last_updated: "2026-01-20"
+  source_url: "https://www.nj.gov/infobank/eo/057sherrill/pdf/EO-1.pdf"
+  sources_policy:
+    - "Public sources only"
+    - "Links required for status=published"
+    - "No internal deliberations"
+    - "No forecasts / no recommendations"
+  status_values: ["not_started", "in_progress", "published", "superseded"]
+
+milestones:
+  - id: "EO1-1A-RUBC-PROVIDE"
+    eo_section: "1(a)"
+    title: "BPU provides for Residential Universal Bill Credits (RUBCs)"
+    target_date: null
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "BPU order or official notice establishing RUBCs (funding sources and scope)"
+      - "Implementation detail document (eligibility, amount, timing)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Status=published only when BPU posts an order/notice publicly."
+    notes: "EO1 directs BPU to provide for RUBCs to offset 2026 electricity supply increases."
+
+  - id: "EO1-1B-RUBC-DEADLINE"
+    eo_section: "1(b)"
+    title: "RUBCs issued (or initial set) no later than July 1, 2026"
+    target_date: "2026-07-01"
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "BPU documentation confirming issuance date and mechanism"
+      - "Utility bill insert or public-facing implementation notice (if posted)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Status=published requires a public artifact confirming issuance by the deadline."
+    notes: "Hard deadline in EO1."
+
+  - id: "EO1-2-RGGI-CONFER-STATEMENT"
+    eo_section: "2"
+    title: "BPU + DEP + EDA confer on RGGI proceeds for ratepayer relief and issue a public statement (within 30 days)"
+    target_date: "2026-02-19"
+    owner_orgs: ["NJBPU", "NJDEP", "NJEDA"]
+    public_artifact_expected:
+      - "Public statement of conclusions re: RGGI proceeds and ratepayer relief"
+      - "Explanation of approach for the 2026–2028 RGGI Strategic Funding Plan (amendment/addendum as needed)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Status=published only when the public statement is posted."
+    notes: "EO1 requires a public statement within 30 days."
+
+  - id: "EO1-3-SBC-REVIEW"
+    eo_section: "3"
+    title: "BPU reviews all components of, and rationales for, SBCs and the Clean Energy Program budget"
+    target_date: null
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "Public notice/order initiating SBC review (if issued)"
+      - "Public staff report / stakeholder process materials (if issued)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Track launch artifacts; do not infer outcomes."
+    notes: "EO1 directs review; no explicit date in EO text."
+
+  - id: "EO1-4-NJCEP-TRUEUP"
+    eo_section: "4"
+    title: "BPU issues FY26 NJCEP 'true-up' budget based on FY25 actuals (no later than May 1, 2026)"
+    target_date: "2026-05-01"
+    owner_orgs: ["NJBPU", "NJCEP"]
+    public_artifact_expected:
+      - "Published FY26 true-up budget document"
+      - "Explanation of reconciliation to FY25 actuals"
+      - "Identification of direct ratepayer relief prioritization and LMI EE support opportunities (as described)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Status=published only when the true-up budget is publicly posted."
+    notes: "EO1 includes explicit deadline and required content."
+
+  - id: "EO1-5-SBC-REDUCTIONS-CONSIDER"
+    eo_section: "5"
+    title: "BPU considers opportunities to reduce SBCs without compromising energy assistance / income-qualified ratepayers"
+    target_date: null
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "Public documentation reflecting consideration (order, report, agenda item, etc.) if issued"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Track only posted artifacts."
+    notes: "EO1 directive; no date specified."
+
+  - id: "EO1-6-RATECASE-SCHEDULE"
+    eo_section: "6"
+    title: "BPU considers pause/abeyance/modification of schedules for EDU proceedings (as permitted by law)"
+    target_date: null
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "Public procedural orders or docket entries reflecting schedule changes (if any)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Track procedural artifacts only; no interpretation of merits."
+    notes: "EO1 frames as 'consider' and 'to the extent permitted by law'."
+
+  - id: "EO1-7-STUDY-DELIVERABLE"
+    eo_section: "7"
+    title: "BPU completes and issues study on modernization of EDU business model (within 180 days)"
+    target_date: "2026-07-19"
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "Public study/report document (or equivalent publication)"
+      - "Public stakeholder session notice(s) and materials (at least one required)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Status=published only when the study is publicly issued."
+    notes: "EO1 sets 180-day deadline and requires at least one public stakeholder session."
+
+  - id: "EO1-7B-STAKEHOLDER-SESSION"
+    eo_section: "7(b)"
+    title: "At least one public stakeholder session held to inform the study"
+    target_date: null
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "Public notice of stakeholder session"
+      - "Agenda/materials (if posted)"
+      - "Recording/transcript (if posted)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Mark published when at least one session is publicly documented."
+    notes: "Explicit requirement in EO1."
+
+  - id: "EO1-7C-PROCUREMENT-PRIORITY"
+    eo_section: "7(c)"
+    title: "If contractor support is procured, prioritize completion of procurement within 30 days"
+    target_date: "2026-02-19"
+    owner_orgs: ["NJBPU", "NJ Treasury - Division of Purchase and Property"]
+    public_artifact_expected:
+      - "Public procurement notice/RFP (if issued)"
+      - "Public award notice (if posted)"
+    status: "not_started"
+    public_artifact_url: null
+    verification_notes:
+      - "Conditional: track only if procurement artifacts appear publicly."
+    notes: "EO1 directs prioritization of procurement within 30 days if undertaken."
+
+  - id: "EO1-8-DISCRETION"
+    eo_section: "8"
+    title: "BPU discretion to take necessary/appropriate steps to effectuate directives"
+    target_date: null
+    owner_orgs: ["NJBPU"]
+    public_artifact_expected:
+      - "Any public orders/notices issued under EO1 authority"
+    status: "in_progress"
+    public_artifact_url: null
+    verification_notes:
+      - "Scope clause; track artifacts elsewhere."
+    notes: "Scope clause included for completeness; not a discrete deliverable."

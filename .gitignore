@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+.venv.bak/
+
+# Environment files
+.env
+
+# Data outputs
+out/
+raw/
+
+# OS/editor
+.DS_Store
+
+/raw/
+/stage/

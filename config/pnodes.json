@@ -1,0 +1,9 @@
+{
+  "zone_to_pnode_name": {
+    "AECO": "AECO",
+    "JCPL": "JCPL",
+    "PSEG": "PSEG",
+    "RECO": "RECO"
+  },
+  "fallback_pnode_name": null
+}

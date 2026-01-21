@@ -1,0 +1,248 @@
+# Metric Catalog for NJ Energy Observability
+# Public-only. Artifact-first. No forecasting or recommendations.
+#
+# This catalog governs meaning, taxonomy, and allowed uses of metrics that
+# are produced (or will be produced) by the scorecard pipeline outputs:
+#   out/<PERIOD>/scorecard_zone.csv
+#   out/<PERIOD>/scorecard_statewide.csv
+#   out/<PERIOD>/scorecard_all.json
+#   out/<PERIOD>/run_manifest.json
+#
+# It does NOT redefine the pipeline; it constrains interpretation.
+
+meta:
+  catalog_version: "v1.0"
+  repo_scope: "nj-energy-observability"
+  primary_grain:
+    - period: "YYYYQ#"
+    - zone_id: ["AECO", "JCPL", "PSEG", "RECO", "NJ_STATEWIDE"]
+  guardrails:
+    - "Public sources only"
+    - "No internal deliberations"
+    - "No forecasts/nowcasts"
+    - "No recommendations"
+    - "No real-time personal alerts"
+  taxonomy:
+    reported:
+      meaning: "Visibility only; descriptive; no target or benchmark implied."
+    scorecarded:
+      meaning: "Compared to an explicit baseline registry (historical distribution); still descriptive."
+    incentive_linked_deferred:
+      meaning: "Explicitly out of scope; placeholder only."
+
+enums:
+  taxonomy: ["reported", "scorecarded", "incentive_linked_deferred"]
+  signal_type: ["outcome", "program"]
+  confidence: ["high", "medium", "low"]
+
+sources:
+  pjm_dataminer:
+    description: "PJM Data Miner 2 public feeds"
+    feeds:
+      hrl_load_metered:
+        key_fields:
+          - "Datetime Beginning EPT"
+          - "Transmission Zone"
+          - "MW"
+          - "Company Verified"
+      hourly_marginal_emissions:
+        key_fields:
+          - "Datetime Beginning EPT"
+          - "Pnode Name"
+          - "MARGINAL CO2 RATE"
+  imm_monitoring_analytics:
+    description: "Monitoring Analytics (PJM IMM) public postings"
+    artifacts:
+      marginal_fuel:
+        key_fields:
+          - "timestamp/hour"
+          - "fuel"
+          - "share"
+  repo_config:
+    description: "Repo configuration files (public parameters / anchors)"
+    files:
+      - "config/capacity_price.json"
+      - "config/customers.json"
+      - "config/zones.json"
+      - "config/pnodes.json"
+  derived:
+    description: "Deterministic transforms from the above sources"
+    notes:
+      - "lbs/MWh → tons/MWh uses division by 2000"
+      - "$/MW-day → $/MWh equivalent uses (price*365)/8760"
+
+metrics:
+
+  - id: "load.total_load_mwh"
+    name: "Total metered load (MWh) in period"
+    domain: "load"
+    taxonomy: "reported"
+    signal_type: "outcome"
+    unit: "MWh"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "pjm_dataminer.hrl_load_metered"
+      method: "Sum(load_mw) over hours in period * 1 hour"
+      source_fields: ["MW", "Datetime Beginning EPT", "Transmission Zone"]
+    output_field: "total_load_mwh"
+    allowed_claims:
+      - "Describes total metered load for the zone in the quarter."
+    disallowed_claims:
+      - "Not a forecast of future load."
+      - "Not proof of causality for price outcomes."
+    caveats:
+      - "Depends on completeness of hourly series; missing hours must be disclosed."
+
+  - id: "load.peak_load_mw"
+    name: "Peak hourly metered load (MW) in period"
+    domain: "load"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "MW"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "pjm_dataminer.hrl_load_metered"
+      method: "Max(load_mw) over hours in period"
+      source_fields: ["MW", "Datetime Beginning EPT", "Transmission Zone"]
+    output_field: "peak_load_mw"
+    baseline_use:
+      required: true
+      baseline_metric: "distribution_over_quarters"
+      recommended_view: ["p50", "p90", "p95", "rank_within_baseline"]
+    allowed_claims:
+      - "Shows peak-hour pressure relative to baseline."
+    disallowed_claims:
+      - "Not a PLC value and not a capacity obligation."
+
+  - id: "load.top_n_avg_load_mw"
+    name: "Average load during top-N hours (MW)"
+    domain: "load"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "MW"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "pjm_dataminer.hrl_load_metered"
+      method: "Select top_N hours by zone load, average load over those hours"
+      params:
+        top_hours_n_source: "config/zones.json:top_hours_n"
+    output_field: "top_n_avg_load_mw"
+    baseline_use:
+      required: true
+
+  - id: "peak.coincidence_corr_with_pjm_rto"
+    name: "Correlation of zone load with PJM RTO load"
+    domain: "peak"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "correlation"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "pjm_dataminer.hrl_load_metered"
+      method: "Correlation(zone_load_mw, rto_load_mw) over frozen method"
+      dependencies:
+        - "RTO series present in pull window"
+    output_field: "coincidence_corr_with_pjm_rto"
+    baseline_use:
+      required: true
+
+  - id: "peak.coincident_top_n_share"
+    name: "Share of zone top-N hours overlapping PJM RTO top-N hours"
+    domain: "peak"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "share"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "pjm_dataminer.hrl_load_metered"
+      method: "Intersection(zone_top_N_hours, rto_top_N_hours) / N"
+      params:
+        top_hours_n_source: "config/zones.json:top_hours_n"
+    output_field: "coincident_top_n_share"
+    baseline_use:
+      required: true
+
+  - id: "peak.peak_pressure_trend"
+    name: "Directional trend vs prior quarter (up/flat/down)"
+    domain: "peak"
+    taxonomy: "reported"
+    signal_type: "outcome"
+    unit: "category"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "derived"
+      method: "Compare chosen peak metric to prior quarter using fixed thresholds"
+    output_field: "peak_pressure_trend"
+
+  - id: "emissions.marginal_co2_tons_per_mwh_top_n_p50"
+    name: "Median marginal CO₂ during zone top-N hours (tons/MWh)"
+    domain: "emissions"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "tons/MWh"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "pjm_dataminer.hourly_marginal_emissions"
+      method: "Map zone→pnode, use top-N hours, convert lbs/MWh to tons/MWh, take median"
+      params:
+        pnode_mapping_source: "config/pnodes.json"
+        top_hours_n_source: "config/zones.json:top_hours_n"
+    output_field: "marginal_co2_tons_per_mwh_top_n_hours_p50"
+    baseline_use:
+      required: true
+    disallowed_claims:
+      - "Not an annual inventory average."
+      - "Not a certificate/attribute claim."
+
+  - id: "fuel.gas_marginal_share_top_n"
+    name: "Gas share of marginal resource during zone top-N hours"
+    domain: "fuel"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "share"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "imm_monitoring_analytics.marginal_fuel"
+      method: "Join hourly gas share to zone top-N hours and average"
+      params:
+        top_hours_n_source: "config/zones.json:top_hours_n"
+    output_field: "gas_marginal_share_top_n_hours"
+    baseline_use:
+      required: true
+
+  - id: "affordability.capacity_price_usd_per_mw_day"
+    name: "Capacity price anchor ($/MW-day)"
+    domain: "affordability"
+    taxonomy: "reported"
+    signal_type: "outcome"
+    unit: "USD/MW-day"
+    cadence: "annual (referenced quarterly)"
+    computed_from:
+      primary_source: "repo_config"
+      method: "Read config/capacity_price.json"
+    output_field: "capacity_price_usd_per_mw_day"
+
+  - id: "affordability.capacity_exposure_usd_per_customer_month_point"
+    name: "Capacity exposure estimate ($/customer-month), point"
+    domain: "affordability"
+    taxonomy: "scorecarded"
+    signal_type: "outcome"
+    unit: "USD/customer-month"
+    cadence: "quarterly"
+    computed_from:
+      primary_source: "derived"
+      method: "capacity_price_mwh_equiv * avg_kwh_per_customer_month / 1000"
+    output_field: "capacity_exposure_usd_per_customer_month_point"
+    baseline_use:
+      required: true
+    disallowed_claims:
+      - "Not a full bill forecast."
+      - "Not a rate-case class allocation."
+
+deferred:
+  incentive_linked:
+    status: "deferred"
+    rationale: "Out of scope for this repo phase; requires separate governance and legal posture."
+    guardrails:
+      - "No incentive targets or performance payouts in this system."
+      - "No enforcement logic."
