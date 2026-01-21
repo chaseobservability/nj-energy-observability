@@ -92,6 +92,28 @@ a.site-title,
   color: var(--link);
 }
 
+.site-nav .menu-icon {
+  background: transparent;
+}
+
+.site-nav .menu-icon svg {
+  fill: var(--text);
+}
+
+@media (max-width: 600px) {
+  .site-nav .trigger {
+    background: var(--bg);
+  }
+
+  .site-nav .page-link {
+    color: var(--text);
+  }
+
+  .theme-toggle {
+    display: none;
+  }
+}
+
 a {
   color: var(--link);
 }
