@@ -25,7 +25,7 @@ inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-1024.pn
 magick "$TMP_DIR/nj-outline-1024.png" -bordercolor none -border 80 "$TMP_DIR/nj-outline-1024-padded.png"
 
 # Compose onto OG canvas (white background), scaled to fit
-magick -size 1200x630 canvas:white \
+magick -size 1200x630 canvas:black \
   "$TMP_DIR/nj-outline-1024-padded.png" -resize 900x500 \
   -gravity center -composite \
   "$OUT_OG_DIR/og-image.png"
@@ -36,7 +36,7 @@ echo "Wrote $OUT_OG_DIR/og-image.png (1200x630)"
 inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-256.png" --export-width=256 --export-area-drawing
 magick "$TMP_DIR/nj-outline-256.png" -bordercolor none -border 20 "$TMP_DIR/nj-outline-256-padded.png"
 
-magick -size 180x180 canvas:white \
+magick -size 180x180 canvas:black \
   "$TMP_DIR/nj-outline-256-padded.png" -resize 120x120 \
   -gravity center -composite \
   "$OUT_ICON_DIR/apple-touch-icon.png"
@@ -44,10 +44,10 @@ magick -size 180x180 canvas:white \
 echo "Wrote $OUT_ICON_DIR/apple-touch-icon.png (180x180)"
 
 # --- 3) Generate favicons (PNG 16/32) ---
-magick "$TMP_DIR/nj-outline-256-padded.png" -resize 28x28 -gravity center -background white \
+magick "$TMP_DIR/nj-outline-256-padded.png" -resize 28x28 -gravity center -background black \
   -extent 32x32 "$OUT_ICON_DIR/favicon-32x32.png"
 
-magick "$TMP_DIR/nj-outline-256-padded.png" -resize 14x14 -gravity center -background white \
+magick "$TMP_DIR/nj-outline-256-padded.png" -resize 14x14 -gravity center -background black \
   -extent 16x16 "$OUT_ICON_DIR/favicon-16x16.png"
 
 echo "Wrote $OUT_ICON_DIR/favicon-32x32.png and favicon-16x16.png"
