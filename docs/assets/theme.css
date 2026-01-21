@@ -196,12 +196,34 @@ pre.highlight {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .site-title {
   flex: 1 1 auto;
+  white-space: nowrap;
 }
 
 .site-header .theme-toggle {
+  margin-left: auto;
+}
+
+.site-nav {
+  flex: 1 1 100%;
+}
+
+.site-nav .trigger {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.site-nav .page-link {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.site-nav .theme-toggle {
   margin-left: auto;
 }

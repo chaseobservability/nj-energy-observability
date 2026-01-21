@@ -30,6 +30,7 @@
     button.textContent = "Theme: System";
 
     var target =
+      document.querySelector(".site-nav .trigger") ||
       document.querySelector(".site-header .wrapper") ||
       document.querySelector(".site-header") ||
       document.querySelector(".site-footer .wrapper") ||
