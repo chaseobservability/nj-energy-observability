@@ -74,6 +74,15 @@ a.site-title,
   fill: var(--text);
 }
 
+.site-title:visited {
+  color: var(--text);
+}
+
+.site-title:hover,
+.site-title:focus {
+  color: var(--link);
+}
+
 .site-nav .page-link:visited {
   color: var(--text);
 }
@@ -125,6 +134,19 @@ code, pre {
   border-color: var(--border);
 }
 
+.highlight,
+.highlight pre,
+pre.highlight {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-color: var(--border);
+}
+
+.highlight code {
+  background: transparent;
+  color: inherit;
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -141,4 +163,18 @@ code, pre {
 .theme-toggle:focus {
   outline: 2px solid var(--link);
   outline-offset: 2px;
+}
+
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-title {
+  flex: 1 1 auto;
+}
+
+.site-header .theme-toggle {
+  margin-left: auto;
 }
