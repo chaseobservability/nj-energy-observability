@@ -266,3 +266,10 @@ pre.highlight {
 .site-nav .theme-toggle {
   margin-left: auto;
 }
+
+@media (min-width: 601px) {
+  .site-nav .nav-trigger,
+  .site-nav label[for="nav-trigger"] {
+    display: none;
+  }
+}
