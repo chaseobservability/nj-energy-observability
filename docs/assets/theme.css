@@ -194,6 +194,19 @@ table tr:nth-child(even) {
   background: var(--table-row-even);
 }
 
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+}
+
+table thead,
+table tbody {
+  width: 100%;
+}
+
 code, pre, pre code {
   background: var(--code-bg) !important;
   color: var(--code-text) !important;
