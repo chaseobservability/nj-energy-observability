@@ -21,7 +21,7 @@ mkdir -p "$OUT_OG_DIR" "$OUT_ICON_DIR" "$TMP_DIR"
 
 # --- 1) Create Open Graph image (1200x630) ---
 # Render a large transparent PNG (keeps edges crisp)
-inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-1024.png" --export-width=1024
+inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-1024.png" --export-width=1024 --export-area-drawing
 
 # Compose onto OG canvas (white background), centered
 magick -size 1200x630 canvas:white \
@@ -31,7 +31,7 @@ magick -size 1200x630 canvas:white \
 echo "Wrote $OUT_OG_DIR/og-image.png (1200x630)"
 
 # --- 2) Generate Apple touch icon (180x180) ---
-inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-256.png" --export-width=256
+inkscape "$SVG" --export-type=png --export-filename="$TMP_DIR/nj-outline-256.png" --export-width=256 --export-area-drawing
 
 magick -size 180x180 canvas:white \
   "$TMP_DIR/nj-outline-256.png" -gravity center -composite \
