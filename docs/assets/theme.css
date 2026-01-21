@@ -100,6 +100,30 @@ a.site-title,
   fill: var(--text);
 }
 
+.site-nav label[for="nav-trigger"] {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.site-nav label[for="nav-trigger"] .menu-icon {
+  background: transparent;
+}
+
+html[data-theme="dark"] .site-nav label[for="nav-trigger"] {
+  background: #0f1115;
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-nav label[for="nav-trigger"] {
+    background: #0f1115;
+    border-color: var(--border);
+    box-shadow: none;
+  }
+}
+
 @media (max-width: 600px) {
   .site-nav .trigger {
     background: var(--bg);
