@@ -57,6 +57,24 @@ header, footer, .site-header, .site-footer {
   border-color: var(--border);
 }
 
+a.site-title,
+.site-title,
+.site-nav .page-link,
+.site-nav .menu-icon,
+.site-nav .menu-icon svg path {
+  color: var(--text);
+  fill: var(--text);
+}
+
+.site-nav .page-link:visited {
+  color: var(--text);
+}
+
+.site-nav .page-link:hover,
+.site-nav .page-link:focus {
+  color: var(--link);
+}
+
 a {
   color: var(--link);
 }
